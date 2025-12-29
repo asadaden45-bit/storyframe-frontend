@@ -1,0 +1,76 @@
+:root {
+  --bg: #0b0b0b;
+  --card: #141414;
+  --text: #ffffff;
+  --muted: rgba(255, 255, 255, 0.7);
+  --border: rgba(255, 255, 255, 0.12);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  padding: 24px;
+  display: grid;
+  place-items: start center;
+}
+
+.card {
+  width: 100%;
+  max-width: 760px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+h1 {
+  margin: 0 0 16px;
+  font-size: 22px;
+}
+
+label {
+  display: block;
+  margin: 14px 0 6px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+input, select, button {
+  font-size: 16px;
+  padding: 12px;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #0f0f0f;
+  color: var(--text);
+}
+
+button {
+  margin-top: 14px;
+  cursor: pointer;
+  border: 0;
+  background: #2f6bff;
+  font-weight: 600;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+pre {
+  margin-top: 16px;
+  background: #0f0f0f;
+  border: 1px solid var(--border);
+  padding: 14px;
+  white-space: pre-wrap;
+  border-radius: 12px;
+  min-height: 80px;
+}
+
+.success { border-color: rgba(50, 255, 160, 0.35); }
+.error { border-color: rgba(255, 90, 90, 0.45); }

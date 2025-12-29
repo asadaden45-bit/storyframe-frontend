@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StoryFrame</title>
+  </head>
+  <body>
+    <main class="card">
+      <h1>StoryFrame</h1>
+
+      <label for="prompt">Prompt</label>
+      <input id="prompt" placeholder="Enter a story prompt" value="a brave robot" />
+
+      <label for="style">Style</label>
+      <select id="style">
+        <option value="default" selected>Default</option>
+        <option value="dark">Dark</option>
+        <option value="kids">Kids</option>
+      </select>
+
+      <button id="btn" type="button">Generate Story</button>
+
+      <pre id="result"></pre>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
