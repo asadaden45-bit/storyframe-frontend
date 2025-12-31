@@ -1,4 +1,4 @@
-const API_URL = "/api/web/stories";
+const API_URL = "https://storyframe-backend.onrender.com/web/stories";
 
 async function generateStory() {
   const promptEl = document.getElementById("prompt");
