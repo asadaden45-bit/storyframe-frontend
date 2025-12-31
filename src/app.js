@@ -32,7 +32,11 @@ async function generateStory() {
 
     const text = await response.text();
     let data;
-    try { data = JSON.parse(text); } catch { data = { raw: text }; }
+    try {
+      data = JSON.parse(text);
+    } catch {
+      data = { raw: text };
+    }
 
     if (!response.ok) {
       resultEl.classList.add("error");
@@ -51,7 +55,6 @@ async function generateStory() {
   }
 }
 
-// Attach after DOM is ready (important)
 window.addEventListener("DOMContentLoaded", () => {
   document.getElementById("btn")?.addEventListener("click", generateStory);
 });
