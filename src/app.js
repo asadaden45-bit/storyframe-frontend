@@ -1,4 +1,8 @@
-const API_URL = "https://storyframe-backend.onrender.com/web/stories";
+// Dev (local): use Vite proxy (/api -> backend)
+// Prod (Cloudflare Pages): call backend directly
+const API_URL = import.meta.env.PROD
+  ? "https://storyframe-backend.onrender.com/web/stories"
+  : "/api/web/stories";
 
 async function generateStory() {
   const promptEl = document.getElementById("prompt");
