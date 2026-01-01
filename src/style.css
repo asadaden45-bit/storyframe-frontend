@@ -84,6 +84,21 @@ button{
   color:#06101f;
 }
 
+/* ✅ NEW: side-by-side buttons */
+.actions{
+  display:flex;
+  gap:12px;
+  margin-top:14px;
+}
+
+.actions button{
+  margin-top:0; /* cancels the old button margin */
+}
+
+@media (max-width: 520px){
+  .actions{ flex-direction:column; }
+}
+
 #copyBtn{
   background:rgba(10,10,10,.55);
   color:var(--text);
