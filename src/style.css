@@ -91,9 +91,198 @@ button{
   margin-top:14px;
 }
 
-.actions button{
-  margin-top:0; /* cancels the old button margin */
+/* ✅ side-by-side buttons */
+.actions{
+  display:flex;
+  gap:12px;
+  margin-top:14px;
 }
+
+.actions button{
+  margin:0;
+  flex:1;
+}
+
+@media (max-width: 520px){
+  .actions{ flex-direction:column; }
+}
+
+/* ✅ side-by-side buttons */
+.actions{
+  display:flex;
+  gap:12px;
+  margin-top:14px;
+}
+
+.actions button{
+  margin:0;
+  flex:1;
+}
+
+@media (max-width: 520px){
+  .actions{ flex-direction:column; }
+}
+
+/* ✅ side-by-side buttons */
+.actions{
+  display:flex;
+  gap:12px;
+  margin-top:14px;
+}
+
+.actions button{
+  margin:0;
+  flex:1;
+}
+
+@media (max-width: 520px){
+  .actions{ flex-direction:column; }
+}
+
+/* ✅ side-by-side buttons */
+.actions{
+  display:flex;
+  gap:12px;
+  margin-top:14px;
+}
+
+.actions button{
+  margin:0;
+  flex:1;
+}
+
+@media (max-width: 520px){
+  .actions{ flex-direction:column; }
+}
+
+/* ✅ side-by-side buttons */
+.actions{
+  display:flex;
+  gap:12px;
+  margin-top:14px;
+}
+
+.actions button{
+  margin:0;
+  flex:1;
+}
+
+@media (max-width: 520px){
+  .actions{ flex-direction:column; }
+}
+
+/* ✅ side-by-side buttons */
+.actions{
+  display:flex;
+  gap:12px;
+  margin-top:14px;
+}
+
+.actions button{
+  margin:0;
+  flex:1;
+}
+
+@media (max-width: 520px){
+  .actions{ flex-direction:column; }
+}
+
+/* ✅ side-by-side buttons */
+.actions{
+  display:flex;
+  gap:12px;
+  margin-top:14px;
+}
+
+.actions button{
+  margin:0;
+  flex:1;
+}
+
+@media (max-width: 520px){
+  .actions{ flex-direction:column; }
+}
+
+/* ✅ side-by-side buttons */
+.actions{
+  display:flex;
+  gap:12px;
+  margin-top:14px;
+}
+
+.actions button{
+  margin:0;
+  flex:1;
+}
+
+@media (max-width: 520px){
+  .actions{ flex-direction:column; }
+}
+
+/* ✅ side-by-side buttons */
+.actions{
+  display:flex;
+  gap:12px;
+  margin-top:14px;
+}
+
+.actions button{
+  margin:0;
+  flex:1;
+}
+
+@media (max-width: 520px){
+  .actions{ flex-direction:column; }
+}
+
+/* ✅ side-by-side buttons */
+.actions{
+  display:flex;
+  gap:12px;
+  margin-top:14px;
+}
+
+.actions button{
+  margin:0;
+  flex:1;
+}
+
+@media (max-width: 520px){
+  .actions{ flex-direction:column; }
+}
+
+/* ✅ side-by-side buttons */
+.actions{
+  display:flex;
+  gap:12px;
+  margin-top:14px;
+}
+
+.actions button{
+  margin:0;
+  flex:1;
+}
+
+@media (max-width: 520px){
+  .actions{ flex-direction:column; }
+}
+
+/* ✅ side-by-side buttons */
+.actions{
+  display:flex;
+  gap:12px;
+  margin-top:14px;
+}
+
+.actions button{
+  margin:0;
+  flex:1;
+}
+
+@media (max-width: 520px){
+  .actions{ flex-direction:column; }
+}
+
 
 @media (max-width: 520px){
   .actions{ flex-direction:column; }
