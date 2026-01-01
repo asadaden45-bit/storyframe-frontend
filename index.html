@@ -5,23 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>StoryFrame</title>
   </head>
+
   <body>
-    <main class="card">
-      <h1>StoryFrame</h1>
+    <main class="container">
+      <header class="header">
+        <h1>StoryFrame</h1>
+        <p>Generate short stories from a prompt — choose a style and go.</p>
+      </header>
 
-      <label for="prompt">Prompt</label>
-      <input id="prompt" placeholder="Enter a story prompt" value="a brave robot" />
+      <section class="card">
+        <label for="prompt">Prompt</label>
+        <input id="prompt" placeholder="Example: a brave robot" value="a brave robot" />
 
-      <label for="style">Style</label>
-      <select id="style">
-        <option value="default" selected>Default</option>
-        <option value="dark">Dark</option>
-        <option value="kids">Kids</option>
-      </select>
+        <label for="style">Style</label>
+        <select id="style">
+          <option value="default" selected>Default</option>
+          <option value="dark">Dark</option>
+          <option value="kids">Kids</option>
+        </select>
 
-      <button id="btn" type="button">Generate Story</button>
+        <button id="btn" type="button">Generate Story</button>
+        <button id="copyBtn" type="button" disabled>Copy Story</button>
 
-      <pre id="result"></pre>
+        <pre id="result" class="result"></pre>
+      </section>
+
+      <footer class="footer">
+        <span>Powered by StoryFrame Backend</span>
+      </footer>
     </main>
 
     <script type="module" src="/src/main.js"></script>

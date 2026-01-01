@@ -1,19 +1,18 @@
-// Dev (local): use Vite proxy (/api -> backend)
-// Prod (Cloudflare Pages): call backend directly
-const API_URL = import.meta.env.PROD
-  ? "https://storyframe-backend.onrender.com/web/stories"
-  : "/api/web/stories";
+const API_URL = "/api/web/stories";
 
 async function generateStory() {
   const promptEl = document.getElementById("prompt");
   const styleEl = document.getElementById("style");
   const resultEl = document.getElementById("result");
   const btn = document.getElementById("btn");
+  const copyBtn = document.getElementById("copyBtn");
 
   const prompt = (promptEl?.value || "").trim();
   const style = styleEl?.value || "default";
 
   resultEl.className = "";
+  if (copyBtn) copyBtn.disabled = true;
+
   if (!prompt) {
     resultEl.classList.add("error");
     resultEl.textContent = "Please type a prompt first.";
@@ -36,11 +35,7 @@ async function generateStory() {
 
     const text = await response.text();
     let data;
-    try {
-      data = JSON.parse(text);
-    } catch {
-      data = { raw: text };
-    }
+    try { data = JSON.parse(text); } catch { data = { raw: text }; }
 
     if (!response.ok) {
       resultEl.classList.add("error");
@@ -49,8 +44,11 @@ async function generateStory() {
       return;
     }
 
+    const storyText = data.story ?? JSON.stringify(data, null, 2);
     resultEl.classList.add("success");
-    resultEl.textContent = data.story ?? JSON.stringify(data, null, 2);
+    resultEl.textContent = storyText;
+
+    if (copyBtn) copyBtn.disabled = !storyText;
   } catch (err) {
     resultEl.classList.add("error");
     resultEl.textContent = "Error: " + (err?.message || String(err));
@@ -59,6 +57,37 @@ async function generateStory() {
   }
 }
 
+async function copyStory() {
+  const resultEl = document.getElementById("result");
+  const copyBtn = document.getElementById("copyBtn");
+  const text = (resultEl?.textContent || "").trim();
+
+  if (!text) return;
+
+  try {
+    await navigator.clipboard.writeText(text);
+    if (copyBtn) {
+      const old = copyBtn.textContent;
+      copyBtn.textContent = "Copied!";
+      setTimeout(() => (copyBtn.textContent = old), 900);
+    }
+  } catch {
+    // Fallback if clipboard is blocked
+    const ta = document.createElement("textarea");
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand("copy");
+    document.body.removeChild(ta);
+    if (copyBtn) {
+      const old = copyBtn.textContent;
+      copyBtn.textContent = "Copied!";
+      setTimeout(() => (copyBtn.textContent = old), 900);
+    }
+  }
+}
+
 window.addEventListener("DOMContentLoaded", () => {
   document.getElementById("btn")?.addEventListener("click", generateStory);
+  document.getElementById("copyBtn")?.addEventListener("click", copyStory);
 });
