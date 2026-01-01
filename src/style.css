@@ -84,6 +84,16 @@ button{
   color:#06101f;
 }
 
+#copyBtn{
+  background:rgba(10,10,10,.55);
+  color:var(--text);
+  border:1px solid var(--border);
+}
+
+#copyBtn:hover{
+  border-color:rgba(87,211,255,.45);
+}
+
 button:disabled{
   opacity:.6;
   cursor:not-allowed;
