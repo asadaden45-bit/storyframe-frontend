@@ -1,3 +1,4 @@
+// ✅ Use backend directly on Cloudflare Pages (fixes 405)
 const API_URL = "https://storyframe-backend.onrender.com/web/stories";
 
 async function generateStory() {
@@ -35,11 +36,7 @@ async function generateStory() {
 
     const text = await response.text();
     let data;
-    try {
-      data = JSON.parse(text);
-    } catch {
-      data = { raw: text };
-    }
+    try { data = JSON.parse(text); } catch { data = { raw: text }; }
 
     if (!response.ok) {
       resultEl.classList.add("error");
@@ -76,7 +73,6 @@ async function copyStory() {
       setTimeout(() => (copyBtn.textContent = old), 900);
     }
   } catch {
-    // Fallback if clipboard is blocked
     const ta = document.createElement("textarea");
     ta.value = text;
     document.body.appendChild(ta);
